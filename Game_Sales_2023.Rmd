@@ -36,3 +36,8 @@ nrow(sales_2024)
 head(sales_2024)
 ```
 
+```{r}
+filtered_sales_2024 <- sales_2024[!is.na(sales_2024$critic_score), ]
+print(filtered_sales_2024)
+```
+
