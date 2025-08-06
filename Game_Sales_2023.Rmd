@@ -2,7 +2,9 @@
 title: "Game Sales 2024"
 author: "Timmy Najmolhoda"
 date: "`r Sys.Date()`"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -32,6 +34,10 @@ head(mydata)
 ```{r}
 sales_2024 <- mydata %>%
   filter(release_year == 2023)
+```
+
+
+```{r}
 nrow(sales_2024)
 head(sales_2024)
 ```
@@ -39,5 +45,8 @@ head(sales_2024)
 ```{r}
 filtered_sales_2024 <- sales_2024[!is.na(sales_2024$critic_score), ]
 print(filtered_sales_2024)
+```
+```{r}
+hist(filtered_sales_2024$critic_score)
 ```
 
